@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="272004" started-at="2020-12-30T22:01:19 IST" finished-at="2020-12-30T22:05:51 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="272004" started-at="2020-12-30T22:01:19 IST" finished-at="2020-12-30T22:05:51 IST">
+      <class name="linkedin.searchTests">
+        <test-method status="PASS" signature="invokeBrowser()[pri:0, instance:linkedin.searchTests@394e1a0f]" name="invokeBrowser" is-config="true" duration-ms="7892" started-at="2020-12-30T22:01:19 IST" finished-at="2020-12-30T22:01:27 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invokeBrowser -->
+        <test-method status="PASS" signature="search_with_filter(java.lang.String, java.lang.String)[pri:0, instance:linkedin.searchTests@394e1a0f]" name="search_with_filter" duration-ms="228492" started-at="2020-12-30T22:01:27 IST" data-provider="searchData" finished-at="2020-12-30T22:05:16 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Ahmad]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[People]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- search_with_filter -->
+        <test-method status="PASS" signature="invokeBrowser()[pri:0, instance:linkedin.searchTests@394e1a0f]" name="invokeBrowser" is-config="true" duration-ms="7291" started-at="2020-12-30T22:05:16 IST" finished-at="2020-12-30T22:05:23 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invokeBrowser -->
+        <test-method status="PASS" signature="search_with_filter(java.lang.String, java.lang.String)[pri:0, instance:linkedin.searchTests@394e1a0f]" name="search_with_filter" duration-ms="28265" started-at="2020-12-30T22:05:23 IST" data-provider="searchData" finished-at="2020-12-30T22:05:51 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Ali]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Companies]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- search_with_filter -->
+      </class> <!-- linkedin.searchTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
