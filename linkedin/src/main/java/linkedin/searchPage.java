@@ -1,7 +1,6 @@
 package linkedin;
  
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,15 +97,5 @@ public class searchPage extends BasePage {
 //	  }
 	  return googleSearchLinks; 
   }
-  public void linksComparison (){
-	  for (int i = 0; i < googleSearchLinks.size(); i++) {  
-		  try {
-			  Assert.assertEquals(linkedinSearchLinks.get(i),googleSearchLinks.get(i)); 
-		} catch (Exception e) {
-			System.out.println("\""+linkedinSearchLinks.get(i)+"\""+" does not match "+"\""+googleSearchLinks.get(i)+"\"");
-		} 
-	  }
-	  
-}
   
 }
