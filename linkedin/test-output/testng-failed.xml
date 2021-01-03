@@ -5,7 +5,8 @@
     <classes>
       <class name="linkedin.searchTests">
         <methods>
-          <include name="search_with_filter" invocation-numbers="0"/>
+          <include name="search_with_filter" invocation-numbers="0 1"/>
+          <include name="terminateBrowser"/>
           <include name="invokeBrowser"/>
         </methods>
       </class> <!-- linkedin.searchTests -->

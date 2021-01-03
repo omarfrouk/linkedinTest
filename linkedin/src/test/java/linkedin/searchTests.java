@@ -32,7 +32,7 @@ public class searchTests extends BaseTest {
 		for (int i = 0; i < googleSearchLinks.size(); i++) {   
 			if( !(linkedinSearchLinks.get(i).equals(googleSearchLinks.get(i))))
 			  System.out.println("\""+linkedinSearchLinks.get(i)+"\""+" does not match "+"\""+googleSearchLinks.get(i)+"\"");
-		  }   
+		  }    
 	} 
 	  
 }
