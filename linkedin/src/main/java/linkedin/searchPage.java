@@ -101,9 +101,9 @@ public class searchPage extends BasePage {
   public void linksComparison (){
 	  for (int i = 0; i < googleSearchLinks.size(); i++) {  
 		  try {
-			  Assert.assertEquals(googleSearchLinks.get(i),googleSearchLinks.get(i)); 
+			  Assert.assertEquals(linkedinSearchLinks.get(i),googleSearchLinks.get(i)); 
 		} catch (Exception e) {
-			System.out.println("\""+googleSearchLinks.get(i)+"\""+" does not match "+"\""+googleSearchLinks.get(i)+"\"");
+			System.out.println("\""+linkedinSearchLinks.get(i)+"\""+" does not match "+"\""+googleSearchLinks.get(i)+"\"");
 		} 
 	  }
 	  
