@@ -8,8 +8,20 @@ public class Locators {
 	public static final By signinButton =By.xpath("//button[text()='Sign in']");
 	public static final By searchfiled =By.xpath("//*[@id=\"ember20\"]/input");
 	public static final By moreFilters =By.xpath("//button//span[text()='More']");//button[@aria-expanded=\"false\" and @class='artdeco-dropdown__trigger search-vertical-filter__dropdown-trigger artdeco-button artdeco-button--tertiary artdeco-button--2 artdeco-button--muted artdeco-dropdown__trigger--placement-bottom ember-view']");//span[text()='More']");
-	public static final By peopleFilterButton =By.xpath("//span[text()='People']");
+	public static final By peopleFilterButton =By.xpath("//span[text()='People']");	
+	public static final By jobsFilterButton=By.xpath("//button/span[text()='Jobs']");
+	public static final By contentFilterButton=By.xpath("//*[text()='Content']");
 	public static final By companiesFilter =By.xpath("//*[text()='Companies']");//ul[@class='list-style-none']/li/button/span[text()='Companies']");
+	public static final By schoolsFilter =By.xpath("//*[text()='Schools']");
+	public static final By groupsFilter =By.xpath("//*[text()='Groups']");
+	public static final By eventsFilter =By.xpath("//*[text()='Events']");
+	
+	public static int filterNum=1;
+	public static  By filters=By.xpath("//ul/li["+filterNum+"]/button/span");
+	public static void changeFilterValue() {
+		filterNum+=1;
+		filters=By.xpath("//ul/li["+filterNum+"]/button/span");
+	}
 	
 	public static int i=1;
 	public static  By linkedinResultSearchNamePeople=By.xpath("//div[@class='search-results ember-view']/div/ul/li["+i+"]//h3//span//span[@class='name actor-name']");

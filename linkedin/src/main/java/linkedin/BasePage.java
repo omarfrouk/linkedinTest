@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
-	public WebDriver driver;
+	public static WebDriver driver;
 	WebDriverWait wait;
 
 	public BasePage(WebDriver driver) {
@@ -26,11 +26,8 @@ public class BasePage {
 		WebDriverWait wait = new WebDriverWait(driver, 100);
 //		wait.until(ExpectedConditions.elementToBeClickable(locator));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-		
 		WebElement button=driver.findElement(locator);
-
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
-
 		executor.executeScript("arguments[0].click();", button);
 	}
 
@@ -66,7 +63,7 @@ public class BasePage {
 	}
  
 	public boolean isElementDisplayed(By locator) {
-		wait=new WebDriverWait(driver, 20);
+		wait=new WebDriverWait(driver, 100);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		return driver.findElement(locator).isDisplayed(); 
 	}
@@ -79,6 +76,6 @@ public class BasePage {
 		wait=new WebDriverWait(driver, 25);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator)); 
 		return driver.findElement(locator).getAttribute(attribute);
-	}
+	} 
 
 }
