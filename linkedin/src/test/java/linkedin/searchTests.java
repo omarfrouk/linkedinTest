@@ -16,7 +16,9 @@ public class searchTests extends BaseTest {
 	linkedin.googleSearchPage googleSearchPg;
 	linkedin.signinPage signinPg;
 	public static String searchDataPath;
-	public static String filtersPath;   
+	public static String filtersPath;
+	public static String googleURL;   
+	public static String linkedinURL;  
 	
 	//@DataProvider(name="searchData")
     public Object[][]  getSearchData() throws Exception { 
@@ -27,23 +29,25 @@ public class searchTests extends BaseTest {
 	public void comparison_linkedin_search_with_google_search_with_using_filters(String name, String filter) throws Exception  { 
 		List<String> linkedinSearchLinks = new ArrayList<String>(); 
 		List<String> googleSearchLinks = new ArrayList<String>(); 
+		
 		 //search from linkedin
+		 
 		linkedinSearchPg =new linkedin.linkedinSearchPage(driver);  
 		googleSearchPg =new linkedin.googleSearchPage(driver); 
 		signinPg=new linkedin.signinPage(driver);
 		
+		//(get linkedin web site)
+		linkedinSearchPg.setWebSite(linkedinURL); 
 		signinPg.signin();
 		linkedinSearchPg.setLinkedinSearchFiled(name);  
 		linkedinSearchPg.setFilter(filter); 
 		linkedinSearchLinks=linkedinSearchPg.getLinkedinSearchData(filter);
 		
 		//search from google(get google web site)
-		googleSearchPage.getGoogleSearchForLinkedin(name,filter); 
+		googleSearchPg.setWebSite(googleURL);  
+		googleSearchPg.setGoogleSearchFiled(name+" "+filter+" linkedin.com"); 
 		googleSearchLinks=googleSearchPg.getGoogleSearchData();  
-//		for (int i = 0; i < googleSearchLinks.size(); i++) {   
-//			if( !(linkedinSearchLinks.get(i).equals(googleSearchLinks.get(i))))
-//			  System.out.println("\""+linkedinSearchLinks.get(i)+"\""+" does not match "+"\""+googleSearchLinks.get(i)+"\"");
-//		  }   
+		googleSearchPg.comparTwolists(linkedinSearchLinks, googleSearchLinks);
 		Assert.assertNotEquals(linkedinSearchLinks, googleSearchLinks,"The two lists are match");
 	} 
 	
@@ -55,27 +59,29 @@ public class searchTests extends BaseTest {
     
 	//@Test(dataProvider="filterAssertion")
 	public void search_filters_should_be_displayed_test1(String name,String filter ) throws IOException {
-		//String name="ali";String filter="People";
 		linkedinSearchPg =new linkedin.linkedinSearchPage(driver);   
 		signinPg=new linkedin.signinPage(driver);
 		
+		//(get linkedin web site)
+		linkedinSearchPg.setWebSite(linkedinURL); 
 		signinPg.signin();
 		linkedinSearchPg.setLinkedinSearchFiled(name); 
 		Assert.assertTrue(linkedinSearchPg.isFilterDisplayed(filter));
-		linkedinSearchPg.setFilter(filter);  
 	} 
 	@Test
 	public void search_filters_should_be_displayed_test2() throws IOException {
 		linkedinSearchPg =new linkedin.linkedinSearchPage(driver);   
 		signinPg=new linkedin.signinPage(driver);
 		
+		//(get linkedin web site)
+		linkedinSearchPg.setWebSite(linkedinURL); 
 		signinPg.signin();
 		String name="Ali";
 		linkedinSearchPg.setLinkedinSearchFiled(name); 
-		String[] expectedFilters={"People","Jobs","Content"};  
+		String[] expectedFilters={"People","Jobs","Content"};   
 		String[] actualFilters= new String[3];
 		actualFilters=linkedinSearchPg.getsearchFilters(); 
-		assertThat(expectedFilters, is(actualFilters));  
+		assertThat(actualFilters,is(expectedFilters));  
 		
 	} 
 	

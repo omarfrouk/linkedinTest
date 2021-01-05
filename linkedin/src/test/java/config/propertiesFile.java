@@ -13,8 +13,9 @@ public class propertiesFile{
 			input = new FileInputStream("src\\test\\java\\config\\config.properties"); 
 			prop.load(input);  
 			linkedin.BaseTest.driverPath=prop.getProperty("driverPath");
-			linkedin.BaseTest.url=prop.getProperty("url");
+			linkedin.searchTests.linkedinURL=prop.getProperty("linkedinUrl");
 			linkedin.searchTests.filtersPath=prop.getProperty("filtersPath");
+			linkedin.searchTests.googleURL=prop.getProperty("googleURL");
 			linkedin.searchTests.searchDataPath=prop.getProperty("searchDataPath");
 			
 			linkedin.signinPage.email=prop.getProperty("email"); 

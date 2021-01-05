@@ -15,7 +15,7 @@ public class linkedinSearchPage extends BasePage {
 	public linkedinSearchPage(WebDriver driver) throws IOException {
 		super(driver); 
 	}
-   
+    
   public void setLinkedinSearchFiled(String name) { 
 	setFieldText(Locators.searchfiled, name); 
 	sendKeysToInputs(Locators.searchfiled, Keys.ENTER); 
@@ -23,9 +23,9 @@ public class linkedinSearchPage extends BasePage {
   public String[] getsearchFilters() { 
 	  String[] filters= new String[3];
 	  for (int i = 0; i <filters.length; i++) {
-		  if(isElementDisplayed(Locators.filters)) 
+		  if(isElementDisplayed(Locators.filters))  
 			  filters[i]=getElementText(Locators.filters);
-		  Locators.changeFilterValue();
+		  Locators.changeFilterValue(); 
 	}
 	  return filters; 
   }
@@ -78,7 +78,6 @@ public class linkedinSearchPage extends BasePage {
 	  Locators.resetLenkidinPeopleVariableValue();
 	  Locators.resetLenkidinCompaniesVariableValue();
 	  List<String> linkedinSearchLinks = new ArrayList<String>();  
-	  //linkedinSearchLinks.clear();
 	  //store data from search into list
 	  List<String[]> temp= new ArrayList<>(); 
 	  temp.clear(); 

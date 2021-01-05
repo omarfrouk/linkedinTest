@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
-	public static WebDriver driver;
+	public  WebDriver driver;
 	WebDriverWait wait;
 
 	public BasePage(WebDriver driver) {
@@ -77,5 +77,7 @@ public class BasePage {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator)); 
 		return driver.findElement(locator).getAttribute(attribute);
 	} 
-
+	public void setWebSite(String URL) {
+		driver.get(URL);
+	}
 }

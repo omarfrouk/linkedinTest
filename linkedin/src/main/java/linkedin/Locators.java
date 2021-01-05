@@ -15,6 +15,7 @@ public class Locators {
 	public static final By schoolsFilter =By.xpath("//*[text()='Schools']");
 	public static final By groupsFilter =By.xpath("//*[text()='Groups']");
 	public static final By eventsFilter =By.xpath("//*[text()='Events']");
+	public static final By googleSearchFiled =By.xpath("//input[@name='q']");
 	
 	public static int filterNum=1;
 	public static  By filters=By.xpath("//ul/li["+filterNum+"]/button/span");
